@@ -57,9 +57,11 @@ namespace HelloWorld
             Tutorial ptutor = new Tutorial();
             ptutor.SetTutorial(1, ".Net");
             Console.WriteLine(ptutor.GetTutorial());
-            childTutorial pTutor = new childTutorial();
+            ChildTutorial pTutor = new ChildTutorial();
             pTutor.RenameTutorial(".Net online Tutorial");
             Console.WriteLine(pTutor.GetTutorial());
+            pTutor.SetTutorial(1, "First Tutorial");
+            pTutor.SetTutorial("First Tutorial");
         }
     }
 }
