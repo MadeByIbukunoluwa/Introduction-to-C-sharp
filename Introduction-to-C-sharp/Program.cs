@@ -1,4 +1,5 @@
 ﻿
+using Fundamentals;
 namespace HelloWorld
 {
     class Program
@@ -53,6 +54,13 @@ namespace HelloWorld
             Console.WriteLine(values[0]);
             Console.WriteLine(values[1]);
             Console.WriteLine(values[2]);
-        } 
+            Tutorial ptutor = new Tutorial();
+            ptutor.SetTutorial(1, ".Net");
+            Console.WriteLine(ptutor.GetTutorial());
+            childTutorial pTutor = new childTutorial();
+            pTutor.RenameTutorial(".Net online Tutorial");
+            Console.WriteLine(pTutor.GetTutorial());
+        }
     }
 }
+
