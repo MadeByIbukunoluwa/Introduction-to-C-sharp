@@ -1,4 +1,5 @@
 ﻿
+using System.Collections;
 using Fundamentals;
 namespace HelloWorld
 {
@@ -62,7 +63,49 @@ namespace HelloWorld
             Console.WriteLine(pTutor.GetTutorial());
             pTutor.SetTutorial(1, "First Tutorial");
             pTutor.SetTutorial("First Tutorial");
+            // Implementation of ArrayList 
+            ArrayList a1 = new ArrayList();
+            a1.Add("ELEMENT1");
+            a1.Add(true);
+            a1.Add("1");
+            a1.Add(5589);
+            a1.Add("Angular");
+            a1.Add("React");
+            //a1.Count();
+            a1.Contains("true");
+            a1.RemoveAt(2);
+            Console.WriteLine(a1[0]);
+            Console.WriteLine(a1[1]);
+            Console.WriteLine(a1[2]);
+            Console.WriteLine(a1[3]);
+            Console.WriteLine(a1[4]);
+            // Implementation of Stack 
+            Stack st = new Stack();
+            st.Push("hello");
+            st.Pop();
+            st.Push(1);
+            st.Push(2);
+            st.Push(3);
+            // Implementatiion of Queue
+            Queue qt = new Queue();
+            qt.Enqueue('1');
+            qt.Enqueue('2');
+            qt.Enqueue('3');
+            qt.Dequeue();
+            foreach (Object obj in qt)
+            {
+                Console.WriteLine(obj);
+            }
+                Console.WriteLine("The number of elements in the Queue is" + qt.Count);
+            Hashtable ht = new Hashtable();
+             ht.Add("key", "value");
+             ht.Add("001", "Machine Learning");
+             ht.Add("002", "Game Development");
+             ht.Add("003", "Embedded Systems engineering");
+            ht.ContainsKey("900");
+            ht.ContainsValue("hrnibrinc");
         }
+
     }
 }
 
