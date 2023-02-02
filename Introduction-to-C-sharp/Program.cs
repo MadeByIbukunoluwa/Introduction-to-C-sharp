@@ -104,6 +104,27 @@ namespace HelloWorld
              ht.Add("003", "Embedded Systems engineering");
             ht.ContainsKey("900");
             ht.ContainsValue("hrnibrinc");
+            string path = "/Users/ibukunoluwaakintobi/Documents/Philosophy.pdf";
+            if (File.Exists(path))
+            {
+                Console.WriteLine("File Exists");
+            }
+            string[] lines;
+
+            lines = File.ReadAllLines(path);
+            Console.WriteLine(lines[0]);
+            Console.WriteLine(lines[1]);
+
+            string allLines;
+            allLines = File.ReadAllText(path);
+
+            Console.WriteLine(lines);
+
+            string copypath = "";
+
+            File.Copy(path, copypath);
+
+
         }
 
     }
