@@ -104,7 +104,7 @@ namespace HelloWorld
              ht.Add("003", "Embedded Systems engineering");
             ht.ContainsKey("900");
             ht.ContainsValue("hrnibrinc");
-            string path = "/Users/ibukunoluwaakintobi/Documents/Philosophy.pdf";
+            string path = "/Users/ibukunoluwaakintobi/Documents/text.txt";
             if (File.Exists(path))
             {
                 Console.WriteLine("File Exists");
@@ -120,10 +120,11 @@ namespace HelloWorld
 
             Console.WriteLine(lines);
 
-            string copypath = "";
+            string copypath = "/text1.txt";
 
             File.Copy(path, copypath);
 
+            //File.Delete(path);
 
         }
 
