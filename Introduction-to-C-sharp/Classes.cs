@@ -1,7 +1,7 @@
 using System;
-
 namespace Fundamentals
 {
+    
     // a public class called Tutorial 
     public class Tutorial
     {
@@ -82,6 +82,13 @@ namespace Fundamentals
         {
             return TutorialName;
         }
+    }
+
+    [Serializable]
+    public class Tutorial2
+    {
+        public int  ID;
+        public string Name;
     }
 
 }   

@@ -1,5 +1,6 @@
-﻿
-using System.Collections;
+﻿using System.Collections;
+using System.Text.Json;
+using System.IO;
 using Fundamentals;
 namespace HelloWorld
 {
@@ -92,9 +93,9 @@ namespace HelloWorld
             qt.Enqueue('2');
             qt.Enqueue('3');
             qt.Dequeue();
-            foreach (Object obj in qt)
+            foreach (Object obj1 in qt)
             {
-                Console.WriteLine(obj);
+                Console.WriteLine(obj1);
             }
                 Console.WriteLine("The number of elements in the Queue is" + qt.Count);
             Hashtable ht = new Hashtable();
@@ -122,10 +123,49 @@ namespace HelloWorld
 
             string copypath = "/text1.txt";
 
-            File.Copy(path, copypath);
+            // For macOS, it throws an exception that tells me its a read-only File System 
+            //File.Copy(path, copypath);
+
 
             //File.Delete(path);
 
+            //Read only file system it will not work
+
+            using (StreamReader sr = File.OpenText(path))
+            {
+                string s = "";
+
+                while ((s = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(s);
+                }
+            }
+            using (StreamWriter sr = File.AppendText(path))
+            {
+                sr.WriteLine("C sharp programming");
+                sr.Close();
+
+                Console.WriteLine(File.ReadAllText(path));
+            }
+            Tutorial2 obj = new Tutorial2();
+            obj.ID = 1;
+            obj.Name = "Game Development";
+
+            //BinaryFormatter is considered obsolete , it has been replaced with JSON.serializer
+            //ICustomFormatter formatter = new BinaryFormatter();
+            //Stream stream = new FileStream()
+            string JSONstring = JsonSerializer.Serialize(obj);
+            Console.WriteLine(obj);
+            Console.WriteLine(JSONstring);
+
+            // Using asynchronous code
+            // We have to put this code in a public static async Main method
+            //string fileName = "newobj.json";
+            //using FileStream createStream = File.Create(fileName);
+            //await JsonSerializer.SerializeAsync(createStream,obj);
+            //await createStream.DisposeAsync();
+
+            //Console.WriteLine(File.ReadAllText(fileName));
         }
 
     }
