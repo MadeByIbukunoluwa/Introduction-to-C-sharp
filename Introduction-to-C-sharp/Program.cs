@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Text.Json;
 using System.IO;
+using System.Net;
 using Fundamentals;
 namespace HelloWorld
 {
@@ -105,6 +106,7 @@ namespace HelloWorld
              ht.Add("003", "Embedded Systems engineering");
             ht.ContainsKey("900");
             ht.ContainsValue("hrnibrinc");
+            // Dictionary <Tkey Tvalue>
             string path = "/Users/ibukunoluwaakintobi/Documents/text.txt";
             if (File.Exists(path))
             {
@@ -166,6 +168,69 @@ namespace HelloWorld
             //await createStream.DisposeAsync();
 
             //Console.WriteLine(File.ReadAllText(fileName));
+            //string uservalue = Console.ReadLine();
+
+            int x = 7;
+
+            string message1 = (x == 1) ? "Car" : "Boat";
+
+            Console.WriteLine(message1);
+
+            //Console.ReadLine();
+
+           
+
+            string zig = "You can get what you want in life if you help other people get what they want";
+
+            Random myRandom = new Random();
+            int randomNumber = myRandom.Next(1, 11);
+            Console.WriteLine(randomNumber.ToString());
+
+            //String Formatting
+            string anotherString = string.Format("{0:N}",123.45);
+            string  anotherString1= string.Format("{0:P}",1234567890);
+            string anotherString2 = string.Format("{0:C}", .123);
+            string anotherString3 = string.Format("{0:(###) ###-####}", 1234567890);
+            Console.WriteLine(anotherString);
+            Console.WriteLine(anotherString1);
+            Console.WriteLine(anotherString2);
+            Console.WriteLine(anotherString3);
+
+            // String Methods 
+            string myString2 = "Tell her that she is going to come";
+            Console.WriteLine(myString2.Substring(6,14));
+            Console.WriteLine(myString2.ToUpper());
+            Console.WriteLine(myString2.Remove(5,18));
+            Console.WriteLine(myString2.Replace(" ","--"));
+            Console.WriteLine(string.Concat("H3LLO", " HOW ARE YOU"));
+            //Console.WriteLine(myString2.Append("XXXX"));
+
+            // Dates and date formatting
+            DateTime myValue = DateTime.Now;
+            Console.WriteLine(myValue.ToShortTimeString());
+            Console.WriteLine(myValue.ToLongTimeString());
+            Console.WriteLine(myValue.ToShortDateString());
+
+            Console.WriteLine(myValue.AddDays(3).ToShortDateString());
+            Console.WriteLine(myValue.AddHours(3).ToShortDateString());
+            Console.WriteLine(myValue.AddDays(-3).ToShortDateString());
+
+
+            char[] charArray = zig.ToCharArray();
+            Array.Reverse(charArray);
+
+            foreach (char zigChar in charArray)
+            {
+                Console.Write(zigChar);
+            }
+
+            Car newCar = new Car("Ford", "2023",2026, "black");
+            Console.WriteLine(newCar);
+
+            //Web client is obsolete, use WebRequest, HttpWebRequest instead
+            //string WebClient = new WebClient();
+
+            Console.ReadLine();
         }
 
     }
